@@ -195,3 +195,7 @@ bindsym XF86MonBrightnessDown   exec xbacklight -dec 5
 bindsym XF86MonBrightnessUp     exec xbacklight -inc 5
 bindsym XF86Launch1             exec speedcrunch
 bindsym Print                   exec gnome-screenshot
+
+# Key indicators for i3blocks
+bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
