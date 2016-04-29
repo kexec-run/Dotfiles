@@ -170,12 +170,13 @@ exec --no-startup-id nm-applet
 #exec feh --bg-scale /home/glass/Horsehead-Nebula-Wallpaper-Desktop.jpg
 exec --no-startup-id nitrogen --restore
 exec compton -bcf -i 0.7
-exec numlockx on
+exec --no-startup-id numlockx on
 exec --no-startup-id light-locker
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 exec --no-startup-id pulseaudio --start
 exec --no-startup-id clipit
+exec hexchat
 
 #workspace and float 
 workspace_layout tabbed
@@ -190,7 +191,7 @@ for_window [class="noise"] floating enable
 bindsym XF86AudioLowerVolume    exec pactl set-sink-volume @DEFAULT_SINK@ -5% && pactl set-sink-mute @DEFAULT_SINK@ 0 $update
 bindsym XF86AudioRaiseVolume    exec pactl set-sink-volume @DEFAULT_SINK@ +5% && pactl set-sink-mute @DEFAULT_SINK@ 0 $update
 bindsym XF86AudioMute           exec pactl set-sink-mute @DEFAULT_SINK@ toggle $update
-bindsym XF86MonBrightnessDown   exec xbacklight -dec 5%
-bindsym XF86MonBrightnessUp     exec xbacklight -inc 5%
+bindsym XF86MonBrightnessDown   exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp     exec xbacklight -inc 5
 bindsym XF86Launch1             exec speedcrunch
 bindsym Print                   exec gnome-screenshot
