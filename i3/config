@@ -166,18 +166,22 @@ bar {
 }
 
 # Startup programs
-exec --no-startup-id nm-applet
+# exec --no-startup-id cinnamon-settings-daemon &
 # exec feh --bg-scale /home/glass/Horsehead-Nebula-Wallpaper-Desktop.jpg
+# exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
+# exec --no-startup-id light-locker
+exec --no-startup-id nm-applet
 exec --no-startup-id nitrogen --restore
 exec compton -bcf
 exec --no-startup-id numlockx on
-# exec --no-startup-id light-locker
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 exec --no-startup-id pulseaudio --start
 exec --no-startup-id clipit
-exec hexchat
-exec --no-startup-id cinnamon-settings-daemon &
+exec --no-startup-id xfsettingsd &
+exec --no-startup-id lxpolkit
+exec --no-startup-id thunar --daemon &
+exec xfce4-terminal -e weechat
+exec --no-startup-id aria2c --enable-rpc --rpc-listen-all &
 
 #workspace and float 
 workspace_layout tabbed
