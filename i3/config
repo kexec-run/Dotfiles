@@ -166,6 +166,7 @@ bar {
 }
 
 # Startup programs
+# exec tint2 &
 # exec --no-startup-id cinnamon-settings-daemon &
 # exec feh --bg-scale /home/glass/Horsehead-Nebula-Wallpaper-Desktop.jpg
 # exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
@@ -182,6 +183,7 @@ exec --no-startup-id lxpolkit
 exec --no-startup-id thunar --daemon &
 exec xfce4-terminal -e weechat
 exec --no-startup-id aria2c --enable-rpc --rpc-listen-all &
+exec --no-startup-id xfce4-power-manager
 
 #workspace and float 
 workspace_layout tabbed
