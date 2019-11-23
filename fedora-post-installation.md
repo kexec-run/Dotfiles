@@ -1,6 +1,6 @@
 ##### Add user to wheel group (sudo)
 
->usermod -aG wheels <user>
+>su -c 'usermod -aG wheels yourusername'
 
 ##### Make necessary changes to dnf.conf - fastestmirror to choose the fastest mirror and deltarpm for saving some bandwidth and data
 
