@@ -16,7 +16,7 @@
 >deltarpm=true
 
 ##### Update repos and update your system
->sudo dnf update
+>sudo dnf upgrade
 
 ##### Install necessary packages
 >sudo dnf install neovim kernel-devel glances sysstat htop -y
