@@ -56,7 +56,7 @@
 
 >echo 'blacklist 'iTCO_wdt' | sudo tee /etc/modprobe.d/nowatchdog.conf
 
-##### Cosmetic Changes for boot splash 
+##### Cosmetic Changes to boot splash
 >plymouth-set-default-theme --list && sudo plymouth-set-default-theme text -R
 
 [urpm]:https://github.com/UnitedRPMs/unitedrpms
