@@ -5,7 +5,7 @@
 ##### Make necessary changes to dnf.conf - fastestmirror to choose the fastest mirror and deltarpm for saving some bandwidth and data
 
 >sudo vi /etc/dnf/dnf.conf
->
+
 >[main]\
 >gpgcheck=1\
 >installonly_limit=3\
@@ -34,13 +34,13 @@
 ##### Adding [UnitedRPMs][urpm] repo since drivers in [RPMFusion][rfusion] repo for BCM4312 didn't work for me.
 
 >sudo rpm --import https://raw.githubusercontent.com/UnitedRPMs/unitedrpms/master/URPMS-GPG-PUBLICKEY-Fedora
->
+
 >sudo dnf -y install https://github.com/UnitedRPMs/unitedrpms/releases/download/15/unitedrpms-$(rpm -E %fedora)-15.fc$(rpm -E %fedora).noarch.rpm
->
+
 >sudo dnf update --refresh
->
+
 >sudo dnf -y groupinstall "Development Tools" 
->
+
 >sudo dnf install broadcom-wl-dkms -y
 
 ##### Installing multimedia codecs
