@@ -21,7 +21,7 @@
 ##### Install necessary packages
 >sudo dnf install neovim kernel-devel glances sysstat htop -y
 
-##### Removing and disabling useless things like bolt for thunderbolt which my system doesn't have, abrt for bug reports, fwupd used to update UEFI fimware - unsupported, and gnome-software which is a big fat useless blob
+##### Removing and disabling useless things like bolt for thunderbolt which my system doesn't have, abrt for bug reports, fwupd used to update UEFI firmware - unsupported, and gnome-software which is a big fat useless blob
 
 >sudo sh -c 'systemctl disable bolt && systemctl mask bolt'
 
