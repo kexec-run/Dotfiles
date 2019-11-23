@@ -19,7 +19,7 @@
 >sudo dnf update
 
 ##### Install necessary packages
->sudo dnf install neovim kernel-devel powertop glances sysstat htop -y
+>sudo dnf install neovim kernel-devel glances sysstat htop -y
 
 ##### Removing and disabling useless things like bolt for thunderbolt which my system doesn't have, abrt for bug reports, fwupd used to update UEFI fimware - unsupported, and gnome-software which is a big fat useless blob
 
@@ -55,6 +55,8 @@
 >sudo sh -c 'dnf install irqbalance -y && systemctl enable irqbalance'
 
 >echo 'blacklist 'iTCO_wdt' | sudo tee /etc/modprobe.d/nowatchdog.conf
+
+>sudo sh -c 'dnf install powertop -y && systemctl enable powertop'
 
 ##### Cosmetic Changes to boot splash
 >plymouth-set-default-theme --list && sudo plymouth-set-default-theme text -R
