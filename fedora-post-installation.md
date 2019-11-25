@@ -61,5 +61,11 @@
 ##### Cosmetic Changes to boot splash
 >plymouth-set-default-theme --list && sudo plymouth-set-default-theme text -R
 
+##### Installing better fonts
+
+>sudo  dnf copr enable dawid/better_fonts
+
+>sudo dnf install fontconfig-enhanced-defaults fontconfig-font-replacements
+
 [urpm]:https://github.com/UnitedRPMs/unitedrpms
 [rfusion]:https://rpmfusion.org/
