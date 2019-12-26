@@ -22,7 +22,7 @@
 >sudo dnf upgrade
 
 ##### Install necessary packages
->sudo dnf install neovim kernel-devel -y
+>sudo dnf in neovim kernel-devel -y
 
 ##### Removing and disabling useless things like bolt for thunderbolt which my system doesn't have, abrt for bug reports, fwupd used to update UEFI firmware - unsupported, and gnome-software which is a big fat useless blob
 
@@ -38,30 +38,30 @@
 
 >sudo rpm --import https://raw.githubusercontent.com/UnitedRPMs/unitedrpms/master/URPMS-GPG-PUBLICKEY-Fedora
 
->sudo dnf -y install https://github.com/UnitedRPMs/unitedrpms/releases/download/15/unitedrpms-$(rpm -E %fedora)-15.fc$(rpm -E %fedora).noarch.rpm
+>sudo dnf -y in https://github.com/UnitedRPMs/unitedrpms/releases/download/15/unitedrpms-$(rpm -E %fedora)-15.fc$(rpm -E %fedora).noarch.rpm
 
 >sudo dnf update --refresh
 
 >sudo dnf -y groupinstall "Development Tools" 
 
->sudo dnf install broadcom-wl-dkms -y
+>sudo dnf in broadcom-wl-dkms -y
 
 ##### Installing multimedia codecs
->sudo dnf install libva-utils gstreamer1-{vaapi,libav,plugins-{good,ugly,bad{-free,-nonfree}}} --setopt=strict=0
+>sudo dnf in libva-utils gstreamer1-{vaapi,libav,plugins-{good,ugly,bad{-free,-nonfree}}} --setopt=strict=0
 
 ##### Installing Essentials
->sudo dnf install vlc opera qbittorrent unzip p7zip p7zip-plugins gnome-tweaks gvfs-{fuse,mtp,nfs,smb} glances sysstat htop fuse-{exfat,sshfs} exfat-utils hexchat -y
+>sudo dnf in vlc opera qbittorrent unzip p7zip p7zip-plugins gnome-tweaks gvfs-{fuse,mtp,nfs,smb} glances sysstat htop fuse-{exfat,sshfs} exfat-utils hexchat -y
 
 ##### Performance Tweaks
->sudo sh -c 'dnf copr enable equeim/ananicy && dnf install ananicy -y && systemctl enable --now ananicy'
+>sudo sh -c 'dnf copr enable equeim/ananicy && dnf in ananicy -y && systemctl enable --now ananicy'
 
->sudo sh -c 'dnf install irqbalance -y && systemctl enable --now irqbalance'
+>sudo sh -c 'dnf in irqbalance -y && systemctl enable --now irqbalance'
 
 >echo 'blacklist 'iTCO_wdt' | sudo tee /etc/modprobe.d/nowatchdog.conf
 
->sudo sh -c 'dnf install powertop -y && systemctl enable --now powertop'
+>sudo sh -c 'dnf in powertop -y && systemctl enable --now powertop'
 
->sudo sh -c 'dnf install tuned -y && systemctl enable --now tuned && tuned-adm profile balanced'
+>sudo sh -c 'dnf in tuned -y && systemctl enable --now tuned && tuned-adm profile balanced'
 
 ##### Cosmetic Changes to boot splash
 >plymouth-set-default-theme --list && sudo plymouth-set-default-theme text -R
@@ -70,7 +70,7 @@
 
 >sudo  dnf copr enable dawid/better_fonts
 
->sudo dnf install fontconfig-enhanced-defaults fontconfig-font-replacements
+>sudo dnf in fontconfig-enhanced-defaults fontconfig-font-replacements
 
 [urpm]:https://github.com/UnitedRPMs/unitedrpms
 [rfusion]:https://rpmfusion.org/
