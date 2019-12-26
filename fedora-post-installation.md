@@ -22,7 +22,7 @@
 >sudo dnf upgrade
 
 ##### Install necessary packages
->sudo dnf install neovim kernel-devel glances sysstat htop -y
+>sudo dnf install neovim kernel-devel -y
 
 ##### Removing and disabling useless things like bolt for thunderbolt which my system doesn't have, abrt for bug reports, fwupd used to update UEFI firmware - unsupported, and gnome-software which is a big fat useless blob
 
@@ -49,8 +49,8 @@
 ##### Installing multimedia codecs
 >sudo dnf install libva-utils gstreamer1-{vaapi,libav,plugins-{good,ugly,bad{-free,-nonfree}}} --setopt=strict=0
 
-##### Installing Opera, VLC, qBittorent, Gnome Tweaks, and unizip/p7zip
->sudo dnf install vlc opera qbittorrent unzip p7zip gnome-tweaks -y
+##### Installing Essentials
+>sudo dnf install vlc opera qbittorrent unzip p7zip p7zip-plugins gnome-tweaks gvfs-{fuse,mtp,nfs,smb} glances sysstat htop fuse-{exfat,sshfs} exfat-utils hexchat -y
 
 ##### Performance Tweaks
 >sudo sh -c 'dnf copr enable equeim/ananicy && dnf install ananicy -y && systemctl enable --now ananicy'
@@ -60,6 +60,8 @@
 >echo 'blacklist 'iTCO_wdt' | sudo tee /etc/modprobe.d/nowatchdog.conf
 
 >sudo sh -c 'dnf install powertop -y && systemctl enable --now powertop'
+
+>sudo sh -c 'dnf install tuned -y && systemctl enable --now tuned && tuned-adm profile balanced'
 
 ##### Cosmetic Changes to boot splash
 >plymouth-set-default-theme --list && sudo plymouth-set-default-theme text -R
