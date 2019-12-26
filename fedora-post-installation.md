@@ -26,13 +26,13 @@
 
 ##### Removing and disabling useless things like bolt for thunderbolt which my system doesn't have, abrt for bug reports, fwupd used to update UEFI firmware - unsupported, and gnome-software which is a big fat useless blob
 
->sudo sh -c 'systemctl disable bolt && systemctl mask bolt'
+>sudo systemctl disable --now bolt
 
 >sudo dnf remove abrt fwupd gnome-software PackageKit* -y
 
 ##### Enabling ssh service
 
->sudo sh -c 'systemctl enable sshd && systemctl start sshd'
+>sudo systemctl enable --now sshd
 
 ##### Adding [UnitedRPMs][urpm] repo since drivers in [RPMFusion][rfusion] repo for BCM4312 didn't work for me.
 
@@ -53,13 +53,13 @@
 >sudo dnf install vlc opera qbittorrent unzip p7zip gnome-tweaks -y
 
 ##### Performance Tweaks
->sudo sh -c 'dnf copr enable equeim/ananicy && dnf install ananicy -y && systemctl enable ananicy'
+>sudo sh -c 'dnf copr enable equeim/ananicy && dnf install ananicy -y && systemctl enable --now ananicy'
 
->sudo sh -c 'dnf install irqbalance -y && systemctl enable irqbalance'
+>sudo sh -c 'dnf install irqbalance -y && systemctl enable --now irqbalance'
 
 >echo 'blacklist 'iTCO_wdt' | sudo tee /etc/modprobe.d/nowatchdog.conf
 
->sudo sh -c 'dnf install powertop -y && systemctl enable powertop'
+>sudo sh -c 'dnf install powertop -y && systemctl enable --now powertop'
 
 ##### Cosmetic Changes to boot splash
 >plymouth-set-default-theme --list && sudo plymouth-set-default-theme text -R
