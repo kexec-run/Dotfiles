@@ -61,7 +61,7 @@
 
 >sudo sh -c 'dnf in powertop -y && systemctl enable --now powertop'
 
->sudo sh -c 'dnf in tuned -y && systemctl enable --now tuned && tuned-adm profile balanced'
+>sudo sh -c 'dnf in tuned tuned-utils -y && systemctl enable --now tuned && powertop2tuned laptop-ac-powersave && tuned-adm profile balanced'
 
 ##### Cosmetic Changes to boot splash
 >plymouth-set-default-theme --list && sudo plymouth-set-default-theme text -R
