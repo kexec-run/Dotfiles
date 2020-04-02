@@ -63,6 +63,8 @@
 
 >sudo sh -c 'dnf in tuned tuned-utils -y && systemctl enable --now tuned && powertop2tuned laptop-ac-powersave && tuned-adm profile balanced'
 
+>echo 'net.core.default_qdisc = cake' | sudo tee /etc/sysctl.d/90-override.conf 
+
 ##### Cosmetic Changes to boot splash
 >plymouth-set-default-theme --list && sudo plymouth-set-default-theme text -R
 

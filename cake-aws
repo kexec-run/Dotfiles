@@ -1,0 +1,10 @@
+sudo apt install linux-aws-edge -y
+git clone git://git.kernel.org/pub/scm/network/iproute2/iproute2.git
+cd iproute2/
+sudo apt install libelf-dev libelfin-dev flexc++ flex bison libcap-dev libcap-ng-dev libcapnp-dev libmnl-dev libnftnl-dev libnftnl7 build-essential -y
+./configure
+make
+sudo make install
+echo 'net.core.default_qdisc = cake' | sudo tee /etc/sysctl.d/90-override.conf
+sudo sysctl --system
+tc qdisc show 
