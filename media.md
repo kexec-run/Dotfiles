@@ -1,6 +1,6 @@
 
 
-# Add audio to one image
+# Add audio to an image
 ```
 ffmpeg -loop 1 -i IMG_3090.JPG -i MEGALOBOX.mp3 -c:v libx264 -tune stillimage -c:a aac -b:a 192k -vf "scale='iw-mod(iw,2)':'ih-mod(ih,2)',format=yuv420p" -shortest -movflags +faststart out.mp4ffmpeg -loop 1 -i IMG_3090.JPG -i MEGALOBOX.mp3 -c:v libx264 -tune stillimage -c:a aac -b:a 192k -vf "scale='iw-mod(iw,2)':'ih-mod(ih,2)',format=yuv420p" -shortest -movflags +faststart output.mp4
 ```
