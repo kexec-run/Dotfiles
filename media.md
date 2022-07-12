@@ -34,3 +34,14 @@ yt-dlp -f 'ba' https://www.youtube.com/watch?v=dQw4w9WgXcQ -o '%(id)s.%(ext)s'
 ```
 
 [Source](https://write.corbpie.com/downloading-youtube-videos-as-audio-with-yt-dlp/)
+
+-----------------------------------------
+
+# Merging images using ImageMagick
+
+```
+* Install ImageMagick: curl https://imagemagick.org/archive/binaries/magick -o /usr/bin/magick && chmod a+x  /usr/bin/magick
+  - To merge veritically: magick convert +append image1.jpg image2.jpg final.jpg
+
+  - To merge horizontally: magick convert -append image1.jpg image2.jpg final.jpg
+```
